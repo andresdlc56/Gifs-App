@@ -1,10 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
 import { GifsApp } from "./GifsApp";
 
+//React redux
+import { Provider } from 'react-redux';
+import { store } from "./store";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GifsApp />
+      <Provider store={ store } >
+          <GifsApp />
+      </Provider>
   </React.StrictMode>
 );

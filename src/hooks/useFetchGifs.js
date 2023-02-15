@@ -1,15 +1,13 @@
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { getGifs } from '../helpers/getGifs';
+import { startLoadingGifs } from '../store/gifs/thunks';
 
 export const useFetchGifs = () => {
-    
-    const getData = async() => {
-        const resul = await getGifs();
-        console.log(resul);
-    }
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        getData();
+        //Thunk
+        dispatch( startLoadingGifs() );
     }, []);
 }

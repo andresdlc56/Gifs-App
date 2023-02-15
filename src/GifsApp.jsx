@@ -3,6 +3,7 @@ import { useFetchGifs } from "./hooks";
 
 export const GifsApp = () => {
 
+    //Cargando gifs random al iniciar 
     useFetchGifs();
 
     return (
